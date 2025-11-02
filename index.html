@@ -5,12 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vape Store Shop</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== Hero avec image de couverture ===== */
+    .hero {
+      position: relative;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: black;
+      background-image: url('COUVERTURE.JPG.JPG');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.4); /* léger voile blanc pour lisibilité */
+      z-index: 0;
+    }
+
+    .hero h1, .hero p, .hero .btn {
+      position: relative;
+      z-index: 1;
+      margin: 10px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: black;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 15px;
+    }
+
+    .btn:hover {
+      background-color: #333;
+    }
+
+    /* Pour le texte général du site */
+    body {
+      color: black;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer, nav ul, section {
+      padding: 10px 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f8f8;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+
+    #cart-sidebar {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 400px;
+      height: 100%;
+      background: #fff;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+      padding: 20px;
+      transition: right 0.3s;
+      z-index: 20;
+      overflow-y: auto;
+    }
+
+    #cart-sidebar.active {
+      right: 0;
+    }
+
+    #cart-sidebar h2 {
+      margin-top: 0;
+    }
+
+    #cart-sidebar input {
+      width: 50px;
+    }
+
+    #cart-sidebar button {
+      margin-top: 5px;
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <div class="logo">
-      <img src="logo-vape-store.jpg.png" alt="Logo Vape Store Shop">
+      <img src="logo-vape-store.jpg.png" alt="Logo Vape Store Shop" width="50">
       Vape Store Shop
     </div>
 
@@ -39,213 +189,7 @@
   <section class="products reveal" id="products">
     <h2>Nos Produits</h2>
     <div class="product-list">
-
-      <!-- ===== 8 ANCIENS PRODUITS ===== -->
-      <div class="product-card reveal" data-name="Puff Falcon JNR Rechargeable" data-price="80">
-        <img src="puff-falcon.jpg" alt="Puff Falcon JNR Rechargeable">
-        <h3>Puff Falcon JNR Rechargeable</h3>
-        <p>Un goût unique et une vapeur douce pour une expérience inoubliable.</p>
-        <span>80 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Vape Pro Max" data-price="80">
-        <img src="vape-produit2.jpg" alt="Vape Pro Max">
-        <h3>Vape Pro Max</h3>
-        <p>Design élégant et puissance optimale pour les amateurs exigeants.</p>
-        <span>80 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="NEXPOD Rechargeable" data-price="45">
-        <img src="NEXPOD-RECHARGABLE.jpg" alt="NEXPOD Rechargeable">
-        <h3>NEXPOD Rechargeable</h3>
-        <p>Une cigarette électronique rechargeable, élégante et performante.</p>
-        <span>45 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="OXBAR 30K" data-price="60">
-        <img src="OXBAR-30K.jpg" alt="OXBAR 30K">
-        <h3>OXBAR 30K</h3>
-        <p>Un modèle compact et puissant pour une expérience durable.</p>
-        <span>60 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="OXBAR 30K-2" data-price="60">
-        <img src="OXBAR-30K-2.jpg" alt="OXBAR 30K-2">
-        <h3>OXBAR 30K-2</h3>
-        <p>Version améliorée du OXBAR 30K avec design optimisé.</p>
-        <span>60 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="OXBAR 30K-3" data-price="60">
-        <img src="OXBAR-30K-3.jpg" alt="OXBAR 30K-3">
-        <h3>OXBAR 30K-3</h3>
-        <p>Modèle dernier cri OXBAR, performance et autonomie maximales.</p>
-        <span>60 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Vozol 25k Shisha" data-price="55">
-        <img src="Vozol-25k-Shisha.jpg" alt="Vozol 25k Shisha">
-        <h3>Vozol 25k Shisha</h3>
-        <p>Saveurs inspirées du Shisha pour une expérience originale et douce.</p>
-        <span>55 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Vozol 40k" data-price="60">
-        <img src="Vozol-40k.jpg" alt="Vozol 40k">
-        <h3>Vozol 40k</h3>
-        <p>Haute capacité, vapeur dense et autonomie exceptionnelle.</p>
-        <span>60 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <!-- ===== 20 NOUVEAUX PRODUITS ===== -->
-      <div class="product-card reveal" data-name="Cartouche Nexpod 10ml" data-price="40">
-        <img src="cartouche-remplissage-nexpod-10ml.jpg.jpg" alt="Cartouche Nexpod 10ml">
-        <h3>Cartouche Nexpod 10ml</h3>
-        <span>40 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Tropicale Ice Nexpod" data-price="35">
-        <img src="tropicale-ice-nexpod.jpg" alt="Tropicale Ice Nexpod">
-        <h3>Tropicale Ice Nexpod</h3>
-        <span>35 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Cherry Dragon Fruit" data-price="35">
-        <img src="cherry-dragon-fruit.jpg" alt="Cherry Dragon Fruit">
-        <h3>Cherry Dragon Fruit</h3>
-        <span>35 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Cola Ice Nexpod" data-price="35">
-        <img src="Cola-Ice-nexpod.jpg.png" alt="Cola Ice Nexpod">
-        <h3>Cola Ice Nexpod</h3>
-        <span>35 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Pina Colada Nexpod" data-price="35">
-        <img src="pinacolada-nexpod.jpg" alt="Pina Colada Nexpod">
-        <h3>Pina Colada Nexpod</h3>
-        <span>35 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="VOZOL STAR 40K 40000 PUFFS" data-price="60">
-        <img src="VOZOL-STAR-40K-40000-PUFFS-VAPE_Blueberry-Ice.jpg" alt="VOZOL STAR 40K">
-        <h3>VOZOL STAR 40K</h3>
-        <span>60 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="VOZOL STAR 40K White" data-price="60">
-        <img src="VOZOL-STAR-40K-40000-PUFFS-VAPE_White-Peach-Raspberry.jpg" alt="VOZOL STAR 40K White">
-        <h3>VOZOL STAR 40K White</h3>
-        <span>60 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="40K Vozol Mango Ice" data-price="60">
-        <img src="40K-vosol-mango-ice.jpg.png" alt="40K Vozol Mango Ice">
-        <h3>40K Vozol Mango Ice</h3>
-        <span>60 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Vozol Star 20000 Mango Ice" data-price="50">
-        <img src="vozol-star-20000-mango-ice.jpg" alt="Vozol Star 20000 Mango Ice">
-        <h3>Vozol Star 20000 Mango Ice</h3>
-        <span>50 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Vozol Star 20000 Raspberry Watermelon" data-price="50">
-        <img src="vozol-star-20000-raspberry-watermelon.jpg.jpeg" alt="Vozol Star 20000 Raspberry Watermelon">
-        <h3>Vozol Star 20000 Raspberry Watermelon</h3>
-        <span>50 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="VOZOL STAR 20000 Dragon Strawnana" data-price="50">
-        <img src="VOZOL_STAR_20000_DRAGON_STRAWNANA.jpg.jpg" alt="VOZOL STAR 20000 Dragon Strawnana">
-        <h3>VOZOL STAR 20000 Dragon Strawnana</h3>
-        <span>50 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Vozol Star 20000 Lemon Lime" data-price="50">
-        <img src="VOZOL-star-20000-lemonlime.jpg" alt="Vozol Star 20000 Lemon Lime">
-        <h3>Vozol Star 20000 Lemon Lime</h3>
-        <span>50 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Sleek Vape RandM Tornado" data-price="55">
-        <img src="sleek-vape-RandM-Tornado-30000-Puffs-Blueberry-Raspberry.jpg" alt="Sleek Vape RandM Tornado 30000 Puffs">
-        <h3>Sleek Vape RandM Tornado</h3>
-        <span>55 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="E-Shisha Grape-Ice-25K" data-price="55">
-        <img src="E-Shisha_-Grape-Ice-25K.jpg" alt="E-Shisha Grape Ice 25K">
-        <h3>E-Shisha Grape Ice 25K</h3>
-        <span>55 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Liquide Fighter Fuel" data-price="15">
-        <img src="liquide-fighter-fuel-by-maison-fuel-creation-vap-fr.jpg" alt="Liquide Fighter Fuel">
-        <h3>Liquide Fighter Fuel</h3>
-        <span>15 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Base 50/50 Vape Or DIY 1L" data-price="138">
-        <img src="base-5050-vape-or-diy-1l.jpg" alt="Base 50/50 Vape Or DIY 1L">
-        <h3>Base 50/50 Vape Or DIY 1L</h3>
-        <span>138 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Liquide Ultimate Phoenix 30ml" data-price="15">
-        <img src="liquide ultimate-phoenix-par-al-30ml.jpg" alt="Liquide Ultimate Phoenix 30ml">
-        <h3>Liquide Ultimate Phoenix 30ml</h3>
-        <span>15 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Liquide Ultimate Oni 30ml" data-price="15">
-        <img src="liquide-ultimate-oni-par-al-30ml.jpg" alt="Liquide Ultimate Oni 30ml">
-        <h3>Liquide Ultimate Oni 30ml</h3>
-        <span>15 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Ragnarok Liquide" data-price="15">
-        <img src="Ragnarok-liquide.jpg" alt="Ragnarok Liquide">
-        <h3>Ragnarok Liquide</h3>
-        <span>15 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
-      <div class="product-card reveal" data-name="Liquide Projet Lenny" data-price="20">
-        <img src="Liquide-projet_lenny.png" alt="Liquide Projet Lenny">
-        <h3>Liquide Projet Lenny</h3>
-        <span>20 dt</span>
-        <button class="add-cart">Ajouter au panier</button>
-      </div>
-
+      <!-- Ici tu gardes tous tes produits tels qu'ils étaient déjà -->
     </div>
   </section>
 
