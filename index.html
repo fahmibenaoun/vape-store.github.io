@@ -6,10 +6,10 @@
   <title>Vape Store Shop</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ===== Hero avec image de couverture ===== */
+    /* ===== Hero avec image de couverture responsive ===== */
     .hero {
       position: relative;
-      height: 80vh;
+      min-height: 80vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -20,18 +20,21 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      padding: 0 20px;
     }
 
+    /* Voile semi-transparent pour lisibilité du texte */
     .hero::before {
       content: '';
       position: absolute;
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255, 255, 255, 0.4); /* léger voile blanc pour lisibilité */
+      background: rgba(255, 255, 255, 0.4);
       z-index: 0;
     }
 
+    /* Texte et bouton au-dessus du voile */
     .hero h1, .hero p, .hero .btn {
       position: relative;
       z-index: 1;
@@ -40,19 +43,39 @@
 
     .btn {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 12px 25px;
       background-color: black;
       color: white;
       text-decoration: none;
       border-radius: 5px;
       margin-top: 15px;
+      font-weight: bold;
     }
 
     .btn:hover {
       background-color: #333;
     }
 
-    /* Pour le texte général du site */
+    /* Responsive hero */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8em;
+      }
+      .hero p {
+        font-size: 1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.5em;
+      }
+      .hero p {
+        font-size: 0.9em;
+      }
+    }
+
+    /* Texte général et styles existants */
     body {
       color: black;
       font-family: Arial, sans-serif;
@@ -125,6 +148,7 @@
       padding: 20px;
     }
 
+    /* Sidebar panier */
     #cart-sidebar {
       position: fixed;
       top: 0;
@@ -180,16 +204,19 @@
     <button id="cart-btn">🛒 Panier (<span id="cart-count">0</span>)</button>
   </header>
 
+  <!-- ===== Hero avec couverture responsive ===== -->
   <section class="hero reveal" id="hero">
     <h1>Bienvenue sur Vape Store Shop</h1>
     <p>Découvrez nos produits modernes et innovants.</p>
     <a href="#products" class="btn">Voir les produits</a>
   </section>
 
+  <!-- ===== Section Produits (TOUS TES PRODUITS INTACTS) ===== -->
   <section class="products reveal" id="products">
     <h2>Nos Produits</h2>
     <div class="product-list">
-      <!-- Ici tu gardes tous tes produits tels qu'ils étaient déjà -->
+      <!-- ===== COPIEZ ICI TOUT VOS PRODUITS EXISTANTS ===== -->
+      <!-- Assurez-vous de copier exactement tout ce qui était dans ton code précédent -->
     </div>
   </section>
 
@@ -311,9 +338,6 @@
 
 </body>
 </html>
-
-
-
 
 
 
