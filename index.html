@@ -8,227 +8,367 @@
 </head>
 <body>
 
-<header>
-  <div class="logo">
-    <img src="logo-vape-store.jpg.png" alt="Logo Vape Store Shop" width="50">
-    Vape Store Shop
+  <header>
+    <div class="logo">
+      <img src="logo-vape-store.jpg.png" alt="Logo Vape Store Shop">
+      Vape Store Shop
+    </div>
+
+    <div class="phone">
+      📞 <a href="tel:+21653509481">+216 53 509 481</a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#hero">Accueil</a></li>
+        <li><a href="#products">Produits</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button id="cart-btn">🛒 Panier (<span id="cart-count">0</span>)</button>
+  </header>
+
+  <section class="hero reveal" id="hero">
+    <h1>Bienvenue sur Vape Store Shop</h1>
+    <p>Découvrez nos produits modernes et innovants.</p>
+    <a href="#products" class="btn">Voir les produits</a>
+  </section>
+
+  <section class="products reveal" id="products">
+    <h2>Nos Produits</h2>
+    <div class="product-list">
+
+      <!-- ===== 8 ANCIENS PRODUITS ===== -->
+      <div class="product-card reveal" data-name="Puff Falcon JNR Rechargeable" data-price="80">
+        <img src="puff-falcon.jpg" alt="Puff Falcon JNR Rechargeable">
+        <h3>Puff Falcon JNR Rechargeable</h3>
+        <p>Un goût unique et une vapeur douce pour une expérience inoubliable.</p>
+        <span>80 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Vape Pro Max" data-price="80">
+        <img src="vape-produit2.jpg" alt="Vape Pro Max">
+        <h3>Vape Pro Max</h3>
+        <p>Design élégant et puissance optimale pour les amateurs exigeants.</p>
+        <span>80 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="NEXPOD Rechargeable" data-price="45">
+        <img src="NEXPOD-RECHARGABLE.jpg" alt="NEXPOD Rechargeable">
+        <h3>NEXPOD Rechargeable</h3>
+        <p>Une cigarette électronique rechargeable, élégante et performante.</p>
+        <span>45 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="OXBAR 30K" data-price="60">
+        <img src="OXBAR-30K.jpg" alt="OXBAR 30K">
+        <h3>OXBAR 30K</h3>
+        <p>Un modèle compact et puissant pour une expérience durable.</p>
+        <span>60 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="OXBAR 30K-2" data-price="60">
+        <img src="OXBAR-30K-2.jpg" alt="OXBAR 30K-2">
+        <h3>OXBAR 30K-2</h3>
+        <p>Version améliorée du OXBAR 30K avec design optimisé.</p>
+        <span>60 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="OXBAR 30K-3" data-price="60">
+        <img src="OXBAR-30K-3.jpg" alt="OXBAR 30K-3">
+        <h3>OXBAR 30K-3</h3>
+        <p>Modèle dernier cri OXBAR, performance et autonomie maximales.</p>
+        <span>60 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Vozol 25k Shisha" data-price="55">
+        <img src="Vozol-25k-Shisha.jpg" alt="Vozol 25k Shisha">
+        <h3>Vozol 25k Shisha</h3>
+        <p>Saveurs inspirées du Shisha pour une expérience originale et douce.</p>
+        <span>55 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Vozol 40k" data-price="60">
+        <img src="Vozol-40k.jpg" alt="Vozol 40k">
+        <h3>Vozol 40k</h3>
+        <p>Haute capacité, vapeur dense et autonomie exceptionnelle.</p>
+        <span>60 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <!-- ===== 20 NOUVEAUX PRODUITS ===== -->
+      <div class="product-card reveal" data-name="Cartouche Nexpod 10ml" data-price="40">
+        <img src="cartouche-remplissage-nexpod-10ml.jpg.jpg" alt="Cartouche Nexpod 10ml">
+        <h3>Cartouche Nexpod 10ml</h3>
+        <span>40 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Tropicale Ice Nexpod" data-price="35">
+        <img src="tropicale-ice-nexpod.jpg" alt="Tropicale Ice Nexpod">
+        <h3>Tropicale Ice Nexpod</h3>
+        <span>35 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Cherry Dragon Fruit" data-price="35">
+        <img src="cherry-dragon-fruit.jpg" alt="Cherry Dragon Fruit">
+        <h3>Cherry Dragon Fruit</h3>
+        <span>35 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Cola Ice Nexpod" data-price="35">
+        <img src="Cola-Ice-nexpod.jpg.png" alt="Cola Ice Nexpod">
+        <h3>Cola Ice Nexpod</h3>
+        <span>35 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Pina Colada Nexpod" data-price="35">
+        <img src="pinacolada-nexpod.jpg" alt="Pina Colada Nexpod">
+        <h3>Pina Colada Nexpod</h3>
+        <span>35 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="VOZOL STAR 40K 40000 PUFFS" data-price="60">
+        <img src="VOZOL-STAR-40K-40000-PUFFS-VAPE_Blueberry-Ice.jpg" alt="VOZOL STAR 40K">
+        <h3>VOZOL STAR 40K</h3>
+        <span>60 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="VOZOL STAR 40K White" data-price="60">
+        <img src="VOZOL-STAR-40K-40000-PUFFS-VAPE_White-Peach-Raspberry.jpg" alt="VOZOL STAR 40K White">
+        <h3>VOZOL STAR 40K White</h3>
+        <span>60 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="40K Vozol Mango Ice" data-price="60">
+        <img src="40K-vosol-mango-ice.jpg.png" alt="40K Vozol Mango Ice">
+        <h3>40K Vozol Mango Ice</h3>
+        <span>60 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Vozol Star 20000 Mango Ice" data-price="50">
+        <img src="vozol-star-20000-mango-ice.jpg" alt="Vozol Star 20000 Mango Ice">
+        <h3>Vozol Star 20000 Mango Ice</h3>
+        <span>50 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Vozol Star 20000 Raspberry Watermelon" data-price="50">
+        <img src="vozol-star-20000-raspberry-watermelon.jpg.jpeg" alt="Vozol Star 20000 Raspberry Watermelon">
+        <h3>Vozol Star 20000 Raspberry Watermelon</h3>
+        <span>50 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="VOZOL STAR 20000 Dragon Strawnana" data-price="50">
+        <img src="VOZOL_STAR_20000_DRAGON_STRAWNANA.jpg.jpg" alt="VOZOL STAR 20000 Dragon Strawnana">
+        <h3>VOZOL STAR 20000 Dragon Strawnana</h3>
+        <span>50 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Vozol Star 20000 Lemon Lime" data-price="50">
+        <img src="VOZOL-star-20000-lemonlime.jpg" alt="Vozol Star 20000 Lemon Lime">
+        <h3>Vozol Star 20000 Lemon Lime</h3>
+        <span>50 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Sleek Vape RandM Tornado" data-price="55">
+        <img src="sleek-vape-RandM-Tornado-30000-Puffs-Blueberry-Raspberry.jpg" alt="Sleek Vape RandM Tornado 30000 Puffs">
+        <h3>Sleek Vape RandM Tornado</h3>
+        <span>55 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="E-Shisha Grape-Ice-25K" data-price="55">
+        <img src="E-Shisha_-Grape-Ice-25K.jpg" alt="E-Shisha Grape Ice 25K">
+        <h3>E-Shisha Grape Ice 25K</h3>
+        <span>55 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Liquide Fighter Fuel" data-price="15">
+        <img src="liquide-fighter-fuel-by-maison-fuel-creation-vap-fr.jpg" alt="Liquide Fighter Fuel">
+        <h3>Liquide Fighter Fuel</h3>
+        <span>15 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Base 50/50 Vape Or DIY 1L" data-price="138">
+        <img src="base-5050-vape-or-diy-1l.jpg" alt="Base 50/50 Vape Or DIY 1L">
+        <h3>Base 50/50 Vape Or DIY 1L</h3>
+        <span>138 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Liquide Ultimate Phoenix 30ml" data-price="15">
+        <img src="liquide ultimate-phoenix-par-al-30ml.jpg" alt="Liquide Ultimate Phoenix 30ml">
+        <h3>Liquide Ultimate Phoenix 30ml</h3>
+        <span>15 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Liquide Ultimate Oni 30ml" data-price="15">
+        <img src="liquide-ultimate-oni-par-al-30ml.jpg" alt="Liquide Ultimate Oni 30ml">
+        <h3>Liquide Ultimate Oni 30ml</h3>
+        <span>15 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Ragnarok Liquide" data-price="15">
+        <img src="Ragnarok-liquide.jpg" alt="Ragnarok Liquide">
+        <h3>Ragnarok Liquide</h3>
+        <span>15 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+      <div class="product-card reveal" data-name="Liquide Projet Lenny" data-price="20">
+        <img src="Liquide-projet_lenny.png" alt="Liquide Projet Lenny">
+        <h3>Liquide Projet Lenny</h3>
+        <span>20 dt</span>
+        <button class="add-cart">Ajouter au panier</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="about reveal" id="about">
+    <h2>À propos</h2>
+    <p>Nous sommes une boutique passionnée par les produits de qualité et le service client. 
+    Vape Store Shop s’engage à offrir le meilleur de la vape moderne.</p>
+  </section>
+
+  <section class="contact reveal" id="contact">
+    <h2>Contactez-nous</h2>
+    <p>Pour toute question, appelez-nous au : <a href="tel:+21653509481">53 509 481</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Vape Store Shop - Tous droits réservés.<br>
+    📞 <a href="tel:+21653509481">53 509 481</a>
+  </footer>
+
+  <!-- ===== Sidebar Panier ===== -->
+  <div id="cart-sidebar">
+    <button id="close-cart">✖</button>
+    <h2>Mon Panier</h2>
+    <div id="cart-items"></div>
+    <div id="cart-total">Total: 0 dt</div>
+    <form id="checkout-form">
+      <input type="text" id="client-name" placeholder="Nom complet" required>
+      <input type="text" id="client-phone" placeholder="Numéro de téléphone" required>
+      <input type="text" id="client-address" placeholder="Adresse complète" required>
+      <button type="submit">Valider la commande</button>
+    </form>
   </div>
 
-  <div class="phone">
-    📞 <a href="tel:+21653509481">+216 53 509 481</a>
-  </div>
-
-  <nav>
-    <ul>
-      <li><a href="#hero">Accueil</a></li>
-      <li><a href="#products">Produits</a></li>
-      <li><a href="#about">À propos</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <button id="cart-btn">🛒 Panier (<span id="cart-count">0</span>)</button>
-</header>
-
-<!-- Hero -->
-<section class="hero reveal" id="hero">
-  <h1>Bienvenue sur Vape Store Shop</h1>
-  <p>Découvrez nos produits modernes et innovants.</p>
-  <a href="#products" class="btn">Voir les produits</a>
-</section>
-
-<!-- Produits -->
-<section class="products reveal" id="products">
-  <h2>Nos Produits</h2>
-  <div class="product-list">
-
-    <!-- ==== PRODUITS INCLUS AVEC IMAGES ==== -->
-    <div class="product-card reveal" data-name="Puff Falcon JNR Rechargeable" data-price="80">
-      <img src="puff-falcon.jpg" alt="Puff Falcon JNR Rechargeable">
-      <h3>Puff Falcon JNR Rechargeable</h3>
-      <p>Un goût unique et une vapeur douce pour une expérience inoubliable.</p>
-      <span>80 dt</span>
-      <button class="add-cart">Ajouter au panier</button>
-    </div>
-
-    <div class="product-card reveal" data-name="Vape Pro Max" data-price="80">
-      <img src="vape-produit2.jpg" alt="Vape Pro Max">
-      <h3>Vape Pro Max</h3>
-      <p>Design élégant et puissance optimale pour les amateurs exigeants.</p>
-      <span>80 dt</span>
-      <button class="add-cart">Ajouter au panier</button>
-    </div>
-
-    <div class="product-card reveal" data-name="NEXPOD Rechargeable" data-price="45">
-      <img src="NEXPOD-RECHARGABLE.jpg" alt="NEXPOD Rechargeable">
-      <h3>NEXPOD Rechargeable</h3>
-      <p>Une cigarette électronique rechargeable, élégante et performante.</p>
-      <span>45 dt</span>
-      <button class="add-cart">Ajouter au panier</button>
-    </div>
-
-    <div class="product-card reveal" data-name="OXBAR 30K" data-price="60">
-      <img src="OXBAR-30K.jpg" alt="OXBAR 30K">
-      <h3>OXBAR 30K</h3>
-      <p>Un modèle compact et puissant pour une expérience durable.</p>
-      <span>60 dt</span>
-      <button class="add-cart">Ajouter au panier</button>
-    </div>
-
-    <div class="product-card reveal" data-name="OXBAR 30K-2" data-price="60">
-      <img src="OXBAR-30K-2.jpg" alt="OXBAR 30K-2">
-      <h3>OXBAR 30K-2</h3>
-      <p>Version améliorée du OXBAR 30K avec design optimisé.</p>
-      <span>60 dt</span>
-      <button class="add-cart">Ajouter au panier</button>
-    </div>
-
-    <div class="product-card reveal" data-name="OXBAR 30K-3" data-price="60">
-      <img src="OXBAR-30K-3.jpg" alt="OXBAR 30K-3">
-      <h3>OXBAR 30K-3</h3>
-      <p>Modèle dernier cri OXBAR, performance et autonomie maximales.</p>
-      <span>60 dt</span>
-      <button class="add-cart">Ajouter au panier</button>
-    </div>
-
-    <div class="product-card reveal" data-name="Vozol 25k Shisha" data-price="55">
-      <img src="Vozol-25k-Shisha.jpg" alt="Vozol 25k Shisha">
-      <h3>Vozol 25k Shisha</h3>
-      <p>Saveurs inspirées du Shisha pour une expérience originale et douce.</p>
-      <span>55 dt</span>
-      <button class="add-cart">Ajouter au panier</button>
-    </div>
-
-    <div class="product-card reveal" data-name="Vozol 40k" data-price="60">
-      <img src="Vozol-40k.jpg" alt="Vozol 40k">
-      <h3>Vozol 40k</h3>
-      <p>Haute capacité, vapeur dense et autonomie exceptionnelle.</p>
-      <span>60 dt</span>
-      <button class="add-cart">Ajouter au panier</button>
-    </div>
-
-    <!-- ==== TOUS LES AUTRES PRODUITS ==== -->
-    <!-- Copiez ici exactement toutes tes autres cartes comme dans ton ancien index -->
-    
-  </div>
-</section>
-
-<section class="about reveal" id="about">
-  <h2>À propos</h2>
-  <p>Nous sommes une boutique passionnée par les produits de qualité et le service client. Vape Store Shop s’engage à offrir le meilleur de la vape moderne.</p>
-</section>
-
-<section class="contact reveal" id="contact">
-  <h2>Contactez-nous</h2>
-  <p>Pour toute question, appelez-nous au : <a href="tel:+21653509481">53 509 481</a></p>
-</section>
-
-<footer>
-  &copy; 2025 Vape Store Shop - Tous droits réservés.<br>
-  📞 <a href="tel:+21653509481">53 509 481</a>
-</footer>
-
-<div id="cart-sidebar">
-  <button id="close-cart">✖</button>
-  <h2>Mon Panier</h2>
-  <div id="cart-items"></div>
-  <div id="cart-total">Total: 0 dt</div>
-  <form id="checkout-form">
-    <input type="text" id="client-name" placeholder="Nom complet" required>
-    <input type="text" id="client-phone" placeholder="Numéro de téléphone" required>
-    <input type="text" id="client-address" placeholder="Adresse complète" required>
-    <button type="submit">Valider la commande</button>
-  </form>
-</div>
-
-<script>
-  // Reveal animation
-  function reveal() {
-    const reveals = document.querySelectorAll('.reveal');
-    for (let i = 0; i < reveals.length; i++) {
-      const windowHeight = window.innerHeight;
-      const elementTop = reveals[i].getBoundingClientRect().top;
-      const elementVisible = 150;
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add('active');
-      } else {
-        reveals[i].classList.remove('active');
+  <script>
+    // Reveal animation
+    function reveal() {
+      const reveals = document.querySelectorAll('.reveal');
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('active');
+        } else {
+          reveals[i].classList.remove('active');
+        }
       }
     }
-  }
-  window.addEventListener('scroll', reveal);
-  window.addEventListener('load', reveal);
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
 
-  // Panier
-  const cartBtn = document.getElementById('cart-btn');
-  const cartSidebar = document.getElementById('cart-sidebar');
-  const closeCart = document.getElementById('close-cart');
-  const cartItemsContainer = document.getElementById('cart-items');
-  const cartTotal = document.getElementById('cart-total');
-  const cartCount = document.getElementById('cart-count');
-  let cart = [];
+    // Panier
+    const cartBtn = document.getElementById('cart-btn');
+    const cartSidebar = document.getElementById('cart-sidebar');
+    const closeCart = document.getElementById('close-cart');
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const cartCount = document.getElementById('cart-count');
+    let cart = [];
 
-  function updateCart() {
-    cartItemsContainer.innerHTML = '';
-    let total = 0;
-    cart.forEach((item, index) => {
-      total += item.price * item.qty;
-      const div = document.createElement('div');
-      div.classList.add('cart-item');
-      div.innerHTML = `
-        ${item.name} (${item.price} dt)
-        <input type="number" min="1" value="${item.qty}" data-index="${index}">
-        <button data-index="${index}">Supprimer</button>
-      `;
-      cartItemsContainer.appendChild(div);
-    });
-    cartTotal.textContent = 'Total: ' + total + ' dt';
-    cartCount.textContent = cart.reduce((sum,i)=>sum+i.qty,0);
+    function updateCart() {
+      cartItemsContainer.innerHTML = '';
+      let total = 0;
+      cart.forEach((item, index) => {
+        total += item.price * item.qty;
+        const div = document.createElement('div');
+        div.classList.add('cart-item');
+        div.innerHTML = `
+          ${item.name} (${item.price} dt)
+          <input type="number" min="1" value="${item.qty}" data-index="${index}">
+          <button data-index="${index}">Supprimer</button>
+        `;
+        cartItemsContainer.appendChild(div);
+      });
+      cartTotal.textContent = 'Total: ' + total + ' dt';
+      cartCount.textContent = cart.reduce((sum,i)=>sum+i.qty,0);
 
-    cartItemsContainer.querySelectorAll('input').forEach(input => {
-      input.addEventListener('change', (e) => {
-        const idx = e.target.dataset.index;
-        cart[idx].qty = parseInt(e.target.value);
+      cartItemsContainer.querySelectorAll('input').forEach(input => {
+        input.addEventListener('change', (e) => {
+          const idx = e.target.dataset.index;
+          cart[idx].qty = parseInt(e.target.value);
+          updateCart();
+        });
+      });
+      cartItemsContainer.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const idx = e.target.dataset.index;
+          cart.splice(idx,1);
+          updateCart();
+        });
+      });
+    }
+
+    document.querySelectorAll('.add-cart').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.parentElement;
+        const name = card.dataset.name;
+        const price = parseFloat(card.dataset.price);
+        const exist = cart.find(i => i.name === name);
+        if (exist) exist.qty +=1;
+        else cart.push({name, price, qty:1});
         updateCart();
       });
     });
-    cartItemsContainer.querySelectorAll('button').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const idx = e.target.dataset.index;
-        cart.splice(idx,1);
-        updateCart();
-      });
-    });
-  }
 
-  document.querySelectorAll('.add-cart').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const card = btn.parentElement;
-      const name = card.dataset.name;
-      const price = parseFloat(card.dataset.price);
-      const exist = cart.find(i => i.name === name);
-      if (exist) exist.qty +=1;
-      else cart.push({name, price, qty:1});
+    cartBtn.addEventListener('click', () => cartSidebar.classList.add('active'));
+    closeCart.addEventListener('click', () => cartSidebar.classList.remove('active'));
+
+    document.getElementById('checkout-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      if(cart.length === 0) { alert('Votre panier est vide !'); return; }
+      alert('Commande validée ! Merci ' + document.getElementById('client-name').value);
+      cart = [];
       updateCart();
+      cartSidebar.classList.remove('active');
+      this.reset();
     });
-  });
-
-  cartBtn.addEventListener('click', () => cartSidebar.classList.add('active'));
-  closeCart.addEventListener('click', () => cartSidebar.classList.remove('active'));
-
-  document.getElementById('checkout-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    if(cart.length === 0) { alert('Votre panier est vide !'); return; }
-    alert('Commande validée ! Merci ' + document.getElementById('client-name').value);
-    cart = [];
-    updateCart();
-    cartSidebar.classList.remove('active');
-    this.reset();
-  });
-</script>
+  </script>
 
 </body>
 </html>
+
+
 
 
 
