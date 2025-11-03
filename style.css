@@ -4,6 +4,7 @@ body {
   margin: 0;
   background-color: #f5f5f5;
   color: #333;
+  overflow-x: hidden; /* Empêche le défilement horizontal */
 }
 
 /* --- Header --- */
@@ -221,14 +222,14 @@ footer {
   position: fixed;
   top: 0;
   right: -400px;
-  width: 350px;
+  width: 400px;
   height: 100%;
   background: #fff;
-  box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+  box-shadow: -2px 0 5px rgba(0,0,0,0.3);
   padding: 20px;
-  transition: right 0.3s;
+  transition: right 0.3s ease;
   overflow-y: auto;
-  z-index: 2000;
+  z-index: 9999;
 }
 
 #cart-sidebar.active {
@@ -332,8 +333,17 @@ footer {
     gap: 15px;
   }
 
+  /* ✅ Panier adaptatif sur mobile */
   #cart-sidebar {
-    width: 100%;
+    width: 90%;
+    right: -100%;
+  }
+
+  #cart-sidebar.active {
+    right: 0;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 }
-
